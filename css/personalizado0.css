@@ -1,7 +1,16 @@
 		/*menu topo horizontal*/
-		
+		*{
+			margin: 0;
+			padding: 0;
+		}
 		body{
 			margin: 0px !important;
+			overflow-x: hidden;
+		}
+		.navbar{
+			position: fixed;
+			z-index: 100;
+			width: 100%;
 		}
 		#menu {
 			border:0px solid red;
@@ -12,13 +21,14 @@
 				color:#fff;
 				margin-top:30px;
 			}
-			#titulo span{
-				color:rgb(255, 202, 29);
-				letter-spacing: 10px
-			}		
-				#titulo:hover{
-					text-decoration:none;
-				}		
+		#titulo img
+		{
+			width: 8vw;
+			position: relative;
+			top: -1vh;
+			left: 5vw;
+		}	
+				
 
 		@media (min-width: 768px) {
 			#tituloContainer {
@@ -27,7 +37,7 @@
 				/*link menu*/
 				.linksMenu li {
 					border: 0px solid red;
-					background-color: #1b1b1b;
+					/* background-color: #1b1b1b; */
 					width: 14vh;
 					height: 90px;
 
@@ -38,69 +48,154 @@
     					height: 100%;
 							display: flex;
 							align-items: center;
-							justify-content: center;					
+							justify-content: center;
+							font-size: 1.6em;
+							color: #fff;					
 				}				
 				.linksMenu li:hover {
-					border-bottom: 5px solid rgb(255, 202, 29);
-					background-color: #363535;
+					border-bottom: 5px solid #ffca1d;
+					
 				}		
+		}
+		/*nav stick*/
+		nav{
+			transition: .5s;
+		}
+		nav.sticky {
+			background: #b6b5b5;
 		}
 		/*action li*/		
 		.active {
 			border: 0px solid darkorange !important;
 			border-bottom: 5px solid darkorange !important;
-    		background-color: #ccc
+    		/* background-color: #ccc */
 		}
 		/*baner principal*/
 		#containerPricnipal {
-			border:0px solid red;
-			height: 480px;
-			margin-top: -20px;
-			background-image: url('../img/fundoBanner1-min.jpg')
+			    border: 0px solid red;
+				height: 100vh;
+				background-image: url(../img/fundoBanner03.jpg);
+				background-size: cover;
+				position: relative;
+				background-repeat: no-repeat';
 		}
+		#overlay{
+			position: absolute;
+			background: #4683da;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			mix-blend-mode: overlay;
+		}
+		.linksMenu{
+			float: right;
+    		margin-top: 2vh;
+		}
+
 		#textoContainerPrincipal {
 			border:0px solid red;
 			margin-top:100px 
 		}
+		.texto-principal{
+			margin-top: 25vh;
+			display: flex;
+			align-content: center;
+			justify-content: center;
+		}
+
 		#textoPrincipal {
-			border:0px solid red;
-			color:rgb(248, 242, 242);
+			text-align: center;
+			color:#ffffff;
+			text-shadow: 1px 5px 6px #000;
 			margin-top: 8vh;
 			width: 45vh;
-			background-color:hsla(215, 57%, 49%, 0.53);
-			padding: 20px
+			padding: 20px;
+			background-image: linear-gradient(348deg, #505f73, transparent);
 		}
+	
 		#textoPrincipal h1{
 			font-size: 55px;
-			text-align: right
+			text-align: center;
 		}
 		#textoPrincipal #segundoSubtitulo{
 			font-size: large;
-			text-align:right
+			text-align:center;
+			text-transform: uppercase;
+
 		}
 		#textoPrincipal #terceiroSubtitulo{
 			font-size: large;
-			text-align:right
+			text-align:center;
+			text-transform: uppercase;
+
 		}
 		#textoPrincipal #telefone{
 			font-size: 35px;
-			color: rgb(247, 181, 103);
+			color: #f8ae0e;
 			text-align: center
 		}
 		/*cartoes*/	
 		.cartoes{
-			margin-top: -50vh
+			margin-top: -50vh;
+			margin-left: 10vw;
 		}
 		.cartoes .cartao{
-			padding: 0
+			padding: 0;
+			margin-right: 3vw;
+			position: relative;
+			box-shadow: 1px 3px 6px #000;
+			height: 600px;
 		}
+		
 		.cartoes .cartao .textoCartao{
 			text-align: center;
 			padding: 3px
 		}
+		
+		.cartoes .cartao .textoCartao p{
+			font-size: 1.2em;
+			color: #fff;
+			text-shadow: 1px 1px 1px #000;
+		}
+		
+		.cartoes .cartao .textoCartao h2{
+			font-size: 3em;
+			text-shadow: 1px 2px 4px #000;
+			color: #fff;
+
+		}
+		
+		.cartoes .cartao .textoCartao .botoes-servicos{
+			font-size: 2.2em;
+			margin-top: 1vh;
+			margin-bottom: 1vh;
+			
+		}
+		/*ajustar a borda do cartão*/
+		.borda
+		{
+			width: 80px;
+			height: 80px;
+			background: #d1d10e;
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			box-shadow: -1px -1px 10px #000;
+		}
+		.cartao-conteiner
+		{
+			position: relative;
+			z-index: 2;
+		}
+		/*todos os serviços*/
+		.todos_os_servicos
+		{
+			padding-bottom: 20vh;
+		}
 		@media (min-width: 1200px) {
 			.cartoes .cartao img{
-				width: 22vmax
+				width: 100%;
 			}
 		}
 		@media (max-width: 767px) {
@@ -196,10 +291,158 @@
 			font-weight: bold
 
 		}
+		/*testemunhos*/
+		.secao-testemunhos
+		{
+			height: 82vh;
+			background: #ccc;
+			padding-top: 15vh;
+		}
+		
+		.secao-testemunhos .titulos-testemunhos
+		{
+			text-align: center;
+			font-size: 3em;
+			color: #c38919;
+			text-shadow: 1px 1px 1px #000;
+		}
+
+		.secao-testemunhos .lista-testemunho
+		{
+			padding-top: 5vh;
+			padding-bottom: 5vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.secao-testemunhos .card-testemunhos
+		{
+			width: 25vw;
+			text-align: center;
+			padding: 10px 20px;
+		}
+		
+		.secao-testemunhos .card-testemunhos .box-texto
+		{
+			padding: 15px 15px;
+			font-size: 1.2em;
+			border: 1px solid #b0aeae;
+			border-top: 7px solid #b17112;
+			color: #363636;
+			letter-spacing: .1em;
+		}
+	
+		.secao-testemunhos .card-testemunhos .img-testemunho
+		{
+			margin-top: 2vh;
+			padding: 1vh;
+		
+		}
+		
+		.secao-testemunhos .card-testemunhos .img-testemunho .nome
+		{
+			padding-top: 1vh;
+			padding-bottom: 1vh;
+			font-size: 2.2em;
+		}
+		
+		.secao-testemunhos .card-testemunhos .img-testemunho .cargo
+		{
+			color: #f4890a;
+			font-size: 27px;
+			font-size: 1.4m;
+			text-shadow: 1px 1px 1px #000;
+		}
+
+		.secao-testemunhos .card-testemunhos img
+		{
+			width: 8em;
+			height: 8em;
+			border-radius: 61px;
+		}
+		/*rodape*/
+		.comp-rodape
+		{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-content: center;
+			justify-content: space-around;
+			text-align: center;
+			padding-top: 8vh;
+    		padding-bottom: 12vh;
+			color: #b3b3b3;
+		}
+
+		.comp-rodape h3
+		{
+			margin-bottom: 3vh;
+			font-size: 2.5em;
+		}
+
+		.comp-rodape .endereco-rodp
+		{
+			text-align: left;
+			font-size: 1.5em;
+			padding-left: 3vw;
+		
+		}
+		
+		.comp-rodape .telefone_r
+		{
+			font-size: 3.2em;		
+		}
+		
+		.comp-rodape .lista-bt-sociais
+		{
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+
+		.comp-rodape .lista-bt-sociais .bt-sociais
+		{
+			width: 17%;
+			padding: 17px;
+			background-color: #696561;
+			border-radius: 50%;
+		}
+		
+		.comp-rodape .lista-bt-sociais .bt-sociais img
+		{
+			width: 2em;
+			filter: invert(1);
+		}
+	
+		
+		.comp-rodape .cards-rodape
+		{
+			border: 0px solid red;
+			width: 25vw;
+		}
+
+		.comp-rodape .horas-rodp
+		{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.comp-rodape .horas-rodp .horarios
+		{
+			width: 30vw;
+			border: 0px solid red;
+			font-size: 2.3em;
+		
+		}
+
 		/*rapado tacho*/
 		#rapaDoTacho{
-			font-size: 18px;
-			color:#fff;
-			background-color: #1b1b1b
+			text-align: center;
+			background: #4d4c4c;
+			padding-top: 2vh;
+			padding-bottom: 2vh;
+			color: #333333;
 		}				
 
