@@ -7,15 +7,95 @@
 			margin: 0px !important;
 			overflow-x: hidden;
 		}
-		.navbar{
+		
+		.menu-horizontal
+		{
 			position: fixed;
 			z-index: 100;
-			width: 100%;
+			width: 100vw;
+			display: flex;
+			justify-content: space-between;
+			padding-top: 2vh;
 		}
+
 		#menu {
 			border:0px solid red;
 			padding: 10px
 		}
+
+		.menu-vertical
+		{
+			position: absolute;
+			background: #fff;
+			top: 0;
+			right: 0;
+			width: 45vw;
+			height: 100vw;
+			display: none;
+		}
+		.menu-vertical ul 
+		{
+				border: 0px solid red;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				margin-top: 10vh;
+		}		
+		
+		.menu-vertical ul li
+		{
+			list-style: none;
+			padding-bottom: 3vh;
+			padding-top: 3vh;
+		}		
+		
+		.menu-vertical ul li a
+		{
+			color: #636262;
+			font-size: 2em;
+		}		
+	
+		.linksMenu{
+			visibility: visible;
+			display: flex;
+			flex-direction: row;
+			margin-top: 2vh;
+			margin-right: 5vw;
+		}
+
+		.linksMenu li{
+			list-style: none;
+			margin-right: 4vw;
+			
+		}
+
+		.linksMenu li:hover{
+			border-bottom: 5px solid #fdf908;
+			transition: .5s;
+		}
+
+		.linksMenu li a{
+			color: #e3dfdf;
+			text-shadow: 1px 1px 1px #000;
+			font-size: 1.6em;
+			font-weight: 900;
+			letter-spacing: 0.1em;
+			text-decoration: none;
+		}
+		
+		.sticky  a{
+			color: #dbdada !important;
+		}
+
+		.menu-hamburguer
+		{
+			visibility: hidden;
+			display: none;
+			width: 7vw;
+			margin-top: 1vh;
+			margin-right: 2vw;
+		}
+
 		#titulo{
 				font-size: 32px;
 				color:#fff;
@@ -30,33 +110,6 @@
 		}	
 				
 
-		@media (min-width: 768px) {
-			#tituloContainer {
-				margin-top: 26px;
-			}
-				/*link menu*/
-				.linksMenu li {
-					border: 0px solid red;
-					/* background-color: #1b1b1b; */
-					width: 14vh;
-					height: 90px;
-
-				}
-				.linksMenu li a{
-					border: 0px solid green;
-						width: 100%;
-    					height: 100%;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							font-size: 1.6em;
-							color: #fff;					
-				}				
-				.linksMenu li:hover {
-					border-bottom: 5px solid #ffca1d;
-					
-				}		
-		}
 		/*nav stick*/
 		nav{
 			transition: .5s;
@@ -73,7 +126,7 @@
 		/*baner principal*/
 		#containerPricnipal {
 			    border: 0px solid red;
-				height: 100vh;
+				padding-bottom: 50vh;
 				background-image: url(../img/fundoBanner03.jpg);
 				background-size: cover;
 				position: relative;
@@ -87,10 +140,6 @@
 			width: 100%;
 			height: 100%;
 			mix-blend-mode: overlay;
-		}
-		.linksMenu{
-			float: right;
-    		margin-top: 2vh;
 		}
 
 		#textoContainerPrincipal {
@@ -140,12 +189,16 @@
 			margin-top: -50vh;
 			margin-left: 10vw;
 		}
+		.linha-cards-servicos{
+			display: flex;
+		}
 		.cartoes .cartao{
 			padding: 0;
 			margin-right: 3vw;
 			position: relative;
 			box-shadow: 1px 3px 6px #000;
 			height: 600px;
+			width: 25vw;
 		}
 		
 		.cartoes .cartao .textoCartao{
@@ -188,21 +241,17 @@
 			position: relative;
 			z-index: 2;
 		}
+
+		.cartao-conteiner img
+		{
+			width: 100%;
+		}
 		/*todos os serviços*/
 		.todos_os_servicos
 		{
 			padding-bottom: 20vh;
 		}
-		@media (min-width: 1200px) {
-			.cartoes .cartao img{
-				width: 100%;
-			}
-		}
-		@media (max-width: 767px) {
-			.cartoes .cartao img{
-				width: 100%
-			}
-		}
+
 		.cartoes .cartao .textoCartao .descrServico {
 			text-align: center
 		}	
@@ -294,9 +343,10 @@
 		/*testemunhos*/
 		.secao-testemunhos
 		{
-			height: 82vh;
+			/* height: 100vh; */
 			background: #ccc;
 			padding-top: 15vh;
+			padding-bottom: 24vh;
 		}
 		
 		.secao-testemunhos .titulos-testemunhos
@@ -411,7 +461,7 @@
 		
 		.comp-rodape .lista-bt-sociais .bt-sociais img
 		{
-			width: 2em;
+			width: 1.2em;
 			filter: invert(1);
 		}
 	
@@ -444,5 +494,110 @@
 			padding-top: 2vh;
 			padding-bottom: 2vh;
 			color: #333333;
-		}				
+		}
+		/*tablet*/
+		@media screen and (max-width: 770px)
+		{
+			.linksMenu
+			{
+				visibility: hidden;
+				display: none;
+			}
+			
+			.menu-hamburguer
+			{
+				visibility: visible;
+				display: block;
+				width: 7vw;
+				margin-top: 1vh;
+				margin-right: 4vw;
+			}
+			
+			.menu-hamburguer img
+			{
+				width: 5vw;
+			}
 
+			.menu-vertical
+			{
+				z-index: 1000;
+				position: fixed;
+				background: #fff;
+				top: 0;
+				right: 0;
+				width: 0vw;
+				/* width: 45vw; */
+				height: 200vw;
+				display: block;
+				overflow: hidden;
+				transition: .5s;
+			}
+
+			.linksMenu-mobil ul li
+			{
+				border: 1px solid red;
+			}
+			
+			.linksMenu-mobil ul li a
+			{
+				text-decoration: none;
+			}
+
+			.linha-cards-servicos {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			
+			.cartoes .cartao {
+				width: 50vw;
+				margin-bottom: 6vh;
+			}
+			
+			.secao-testemunhos .lista-testemunho {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			
+			.secao-testemunhos .card-testemunhos {
+				width: 56vw;
+				margin-bottom: 8vh;
+			}
+			.secao-testemunhos .card-testemunhos .box-texto {
+				width: 50vw;
+			}
+			
+			footer {
+				background-color: #424142ad;
+			}
+			.comp-rodape .cards-rodape {
+				width: 32vw;
+			}
+			.comp-rodape .endereco-rodp {
+				text-align: left;
+				font-size: 1.1em;
+				padding-left: 3vw;
+			}
+			.comp-rodape .telefone_r {
+				font-size: 1.6em;
+			}
+			.comp-rodape h3 {
+				font-size: 1.1em;
+			}
+			.comp-rodape .lista-bt-sociais .bt-sociais {
+				width: 28%;
+				padding: 17px;
+				background-color: #696561;
+				border-radius: 50%;
+			}
+			.comp-rodape .lista-bt-sociais .bt-sociais img {
+				width: .8em;
+				filter: invert(1);
+			}
+			.comp-rodape .horas-rodp .horarios {
+				font-size: .9em;
+			}
+		}				
+						

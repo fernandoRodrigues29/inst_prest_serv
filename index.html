@@ -10,36 +10,31 @@
 </head>
 <body>
  <header>
-	
-	<nav class="navbar">
-		<div class="container-fluid">
-		  
-		 <div class="row">
-			 <div class="col-md-3 col-sm-3" id="tituloContainer">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					  <span class="sr-only">Toggle navigation</span>
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>
-					</button>
+	<nav class="menu-horizontal">
+		 	 <div id="tituloContainer">
 					<a href="#" id="titulo">
 						<img src="./img/logohrench.png" alt="">
 					</a>	
 			 </div>
-			 <div class="col-md-9 col-sm-9">
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav linksMenu">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Serviços</a></li>
-					  <li><a href="#">Testemunhos</a></li>
-					  <li><a href="#">Contato</a></li>
-					</ul>
-				  </div>		 
-			</div>		 
-		 </div> 
-		</div>
-	  </nav>
- </header> 
+  			 <ul class="linksMenu">
+			  	<li><a href="#containerPricnipal">Home</a></li>
+			  	<li><a href="#textoEletricita">Serviços</a></li>
+			  	<li><a href="#testemunhos-conteiner">Testemunhos</a></li>
+			  	<li><a href="#rodape-conteiner">Contato</a></li>
+			 </ul>
+			 <div class="menu-hamburguer" id="menu-hamburguer">
+				 <img src="./img/menu.png" alt="">	
+			 </div>
+	</nav>
+	<div class="menu-vertical" id="menu-vertical">
+		<ul class="linksMenu-mobil">
+			<li><a href="#containerPricnipal">Home</a></li>
+			<li><a href="#textoEletricita">Serviços</a></li>
+			<li><a href="#testemunhos-conteiner">Testemunhos</a></li>
+			<li><a href="#rodape-conteiner">Contato</a></li>
+		  </ul>		 
+	</div>
+</header> 
 <main>
 	<section>
 		<div class="container-fluid" id="containerPricnipal">
@@ -63,8 +58,8 @@
 			<div class="row">
 				<div class="col-lg-12 cartoes" >
 					<!--cartoes-->
-					<div class="row">
-						<div class="col-lg-3 cartao"  id="textoEletricita">
+					<div class="row linha-cards-servicos">
+						<div class="cartao"  id="textoEletricita">
 							<div class="cartao-conteiner"> 
 								<img src="img/eletricista00-min.jpg" alt="">
 								<div class="textoCartao">
@@ -79,7 +74,7 @@
 							</div>
 							<div class="borda"></div>
 						</div>
-						<div class="col-lg-3 cartao" id="textoEncanador">
+						<div class="cartao" id="textoEncanador">
 							<div class="cartao-conteiner">
 								<img src="img/encanador00-min.jpg" alt="">
 								<div class="textoCartao" >
@@ -93,7 +88,7 @@
 							</div>
 							<div class="borda"></div>	
 						</div>
-						<div class="col-lg-3 cartao" id="textoPedreiro">
+						<div class="cartao" id="textoPedreiro">
 							<div class="cartao-conteiner">
 								<img src="img/pedreiro00-min.jpg" alt="">
 								<div class="textoCartao">
@@ -248,7 +243,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid" id="testemunhos-conteiner">
 		<div class="row secao-testemunhos">
 				<div class="titulos-testemunhos">
 					<h2>Testemunhos</h2>
@@ -291,8 +286,8 @@
 	</section>
 </main>
 
-<footer>
-	<div class="row">
+<footer id="rodape-conteiner">
+	<!-- <div class="row">
 		<br/><br/>
 		<div class="row" id="rodapeTituloMapa" >
 			<div class="col-xs-6 col-xs-offset-1">
@@ -304,6 +299,7 @@
 				<div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/en/">embedgooglemaps EN</a> & <a href="https://newyorkhoponhopoffbus.nl">new york bus tours | hop on hop off bus</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
 		</div><br />
 	</div>
+	 -->
 	<div class="row" id="rodapeServicosContainer">
 		<div class="comp-rodape">
 			<div class="cards-rodape endereco-rodp">
@@ -379,6 +375,28 @@
 		header.classList.toggle("sticky",window.scrollY > 0);
 				// menuM.classList.toggle("menu-mobil-stick",window.scrollY > 0);
 	});
+
+		const menu_mobile = document.querySelector('#menu-hamburguer');
+        menu_mobile.addEventListener('click',function(){
+            
+			const menu_expansivo = document.querySelectorAll('.menu-vertical');
+            		if(menu_expansivo[0].style.width === "50vw"){
+						menu_expansivo[0].style.width="0vw";
+					}else{
+						menu_expansivo[0].style.width="50vw";
+					}
+        });
+		
+		const menu_vertical = document.querySelector('#menu-vertical');
+        menu_vertical.addEventListener('click',function(){
+            
+			const menu_expansivo = document.querySelectorAll('.menu-vertical');
+            		if(menu_expansivo[0].style.width === "50vw"){
+						menu_expansivo[0].style.width="0vw";
+					}else{
+						menu_expansivo[0].style.width="50vw";
+					}
+        });
 </script>	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
